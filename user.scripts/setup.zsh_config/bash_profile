@@ -1,0 +1,7 @@
+export TERM=xterm-color
+
+# wait for browser window to load
+sleep 0.8
+
+# replace bash with zsh
+exec zsh
