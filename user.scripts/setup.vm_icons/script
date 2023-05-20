@@ -1,0 +1,12 @@
+#!/bin/bash
+icon_dir="/mnt/user/sources/icons"
+target_dir="/usr/local/emhttp/plugins/dynamix.vm.manager/templates/images/"
+
+mkdir -p $icon_dir
+if [ -z "$(ls -A $icon_dir)" ]; then
+    echo "No files in custom icons folder. Nothing copied."
+else
+    echo "Copying icons..."
+    cp $icon_dir/* $target_dir
+    echo "Done."
+fi
