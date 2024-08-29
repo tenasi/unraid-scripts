@@ -3,10 +3,11 @@ calc() {
 }
 
 zfs_reduced() {
+    DOCKER_PATH="storage/system/"
     output=`\zfs $@`
-    echo -n $output | grep -v "storage/system/.*legacy"
+    echo -n $output | grep -v "$DOCKER_PATH.*legacy"
 
-    used=`\echo $output | grep "storage/system/.*legacy" | awk -F ' ' '{print $2}'`
+    used=`\echo $output | grep "$DOCKER_PATH.*legacy" | awk -F ' ' '{print $2}'`
     total_kb=`echo $used | grep K | sed 's/.$//' | awk '{sum += $1} END {print sum}'`
     total_mb=`echo $used | grep M | sed 's/.$//' | awk '{sum += $1} END {print sum}'`
     total_gb=`echo $used | grep G | sed 's/.$//' | awk '{sum += $1} END {print sum}'`
