@@ -1,0 +1,3 @@
+#!/bin/bash
+cp -f /boot/config/plugins/user.scripts/scripts/setup.zsh_config/zshrc /root/.zshrc
+cp -f /boot/config/plugins/user.scripts/scripts/setup.zsh_config/bash_profile /root/.bash_profile
